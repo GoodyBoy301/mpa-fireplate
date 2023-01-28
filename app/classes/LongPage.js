@@ -31,7 +31,7 @@ export default class LongPage extends Page {
       current: 0,
       target: 0,
       last: { y: 0, clientY: 0 },
-      // limit: this.elements.wrapper.clientWidth - window.innerWidth,
+      // limit: this.elements.wrapper.clientHeight - window.innerHeight,
     };
   }
 
