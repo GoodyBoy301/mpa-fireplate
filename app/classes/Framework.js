@@ -32,6 +32,12 @@ export default class Framework {
     if (!Navigation) return;
     this.navigation = new Navigation(this.template);
     this.navigation.addEventListener("completed", this.onNavigate.bind(this));
+    this.navigation.addEventListener("smoothScroll", (event) => {
+      const scroll = event.scroll;
+      scroll.current = this.page.scroll?.target;
+      scroll.last = this.page.scroll?.last;
+      this.page.reCalculate({ scroll });
+    });
   }
   async onNavigate({ event, push = true }) {
     const [html, template] = await this.router.go(event);
