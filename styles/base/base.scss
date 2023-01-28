@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @extend %text-10;
+  @extend %text-s;
   @extend %light-theme;
   min-height: 100vh;
   user-select: none;
