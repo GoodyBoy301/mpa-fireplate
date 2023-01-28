@@ -10,7 +10,7 @@ export default class Framework {
     // this.createPreloader();
     this.createContent();
     this.addEventListeners();
-    this.createNavigation();
+    // this.createNavigation();
     this.createRouter();
     if (!this.preloader) this.onPreloaded();
   }
