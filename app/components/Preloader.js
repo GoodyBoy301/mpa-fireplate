@@ -73,13 +73,8 @@ export default class Preloader extends Component {
   }
 
   async onCompleted() {
-    const temp = setTimeout(() => {
-      this.dispatchEvent({ type: "preloaded" });
-      clearTimeout(temp);
-    }, 2725);
-
     //leave animation
-
+    this.dispatchEvent({ type: "preloaded" });
     this.destroy();
   }
 
