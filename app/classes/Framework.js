@@ -1,6 +1,6 @@
 import Router from "classes/Router";
 import Preloader from "components/Preloader";
-import Navigation from "components/Navigation";
+// import Navigation from "components/Navigation";
 import Canvas from "components/Canvas";
 
 export default class Framework {
@@ -29,7 +29,8 @@ export default class Framework {
   }
 
   createNavigation() {
-    this.navigation = new Navigation();
+    if (!Navigation) return;
+    this.navigation = new Navigation(this.template);
     this.navigation.addEventListener("completed", this.onNavigate.bind(this));
   }
   async onNavigate({ event, push = true }) {
