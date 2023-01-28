@@ -3,6 +3,8 @@
   @include media("<phone") {
     padding: clamp(0rem, 2.7rem, 30px) clamp(0rem, 1.6rem, 20px) 0;
   }
+  position: fixed;
+  top: 0;
 }
 
 %light-theme {
