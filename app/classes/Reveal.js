@@ -4,7 +4,6 @@ import gsap from "gsap";
 export default class Reveal extends Component {
   constructor(params) {
     super(params);
-    this.animateIn = params.animateIn || this[params.animateIn] || this.curtain;
     this.threshold = params.threshold || 0.75
     this.createObserver();
   }
@@ -15,7 +14,7 @@ export default class Reveal extends Component {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this.animateIn(entry.target);
+          this[(entry.getAttribute("data-reveal"))](entry.target);
           this.observer.unobserve(entry.target);
         }
       });
