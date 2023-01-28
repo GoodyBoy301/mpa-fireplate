@@ -7,6 +7,7 @@ export default class Component extends EventDispatcher {
     this.elements = {};
 
     this.storeComponentAssets(this.elements, { ...elements });
+    this.addEventListeners();
   }
 
   storeComponentAssets(collection, entries) {
@@ -25,4 +26,6 @@ export default class Component extends EventDispatcher {
       }
     });
   }
+
+  addEventListeners() {}
 }
