@@ -7,11 +7,12 @@ export default class Framework {
   constructor() {
     this.reCalculate();
     this.createCanvas();
-    this.createPreloader();
+    // this.createPreloader();
     this.createContent();
     this.addEventListeners();
     this.createNavigation();
     this.createRouter();
+    if (!this.preloader) this.onPreloaded();
   }
 
   reCalculate() {
