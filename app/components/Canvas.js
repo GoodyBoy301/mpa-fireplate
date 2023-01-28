@@ -29,6 +29,10 @@ export default class Canvas {
     this.time.update();
   }
 
+  destroy(){
+    
+  }
+
   reCalculate() {
     this.mouseTracker = {
       currentX: 0,
