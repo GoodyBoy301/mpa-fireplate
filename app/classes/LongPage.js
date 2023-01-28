@@ -74,6 +74,12 @@ export default class LongPage extends Page {
     this.elements.wrapper.style[
       this.transformPrefix
     ] = `translateY(-${this.scroll.current}px)`;
+
+    this.elements.parallexElements?.forEach((element) => {
+      element.style[this.transformPrefix] = `translateY(-${
+        this.scroll.current * element.getAttribute("data-parallax")
+      }px)`;
+    });
   }
 
   addEventListeners() {
