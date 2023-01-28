@@ -1,4 +1,3 @@
-import * as preloader from "animations/preloader";
 import gsap from "gsap";
 import Component from "classes/Component";
 import { MeshBasicMaterial, TextureLoader, sRGBEncoding } from "three";
@@ -79,7 +78,8 @@ export default class Preloader extends Component {
       clearTimeout(temp);
     }, 2725);
 
-    await preloader.leave();
+    //leave animation
+
     this.destroy();
   }
 
