@@ -4,7 +4,8 @@ import gsap from "gsap";
 export default class Reveal extends Component {
   constructor(params) {
     super(params);
-    this.threshold = params.threshold || 0.75
+    this.threshold = params.threshold || 0.75;
+    this.unobserve = params.unobserve ?? true;
     this.createObserver();
   }
 
@@ -14,14 +15,24 @@ export default class Reveal extends Component {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this[(entry.getAttribute("data-reveal"))](entry.target);
+          this[entry.getAttribute("data-reveal")](entry.target);
+          if (this.unobserve) this.observer.unobserve(entry.target);
           this.observer.unobserve(entry.target);
+        } else {
+          this[entry.getAttribute("data-reveal") + "Reverse"]?.call(
+            this,
+            entry.target
+          );
         }
       });
     }, options);
 
-    this.elements.images.forEach((image) => {
-      this.observer.observe(image);
+    Object.entries(this.elements).forEach(([key, value]) => {
+      if (value.forEach) {
+        value.forEach((element) => {
+          this.observer.observe(element);
+        });
+      } else this.observer.observe(value);
     });
   }
 
