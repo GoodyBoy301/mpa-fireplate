@@ -34,16 +34,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-h1 {
-  opacity: 0;
-}
-[data-subTitle] {
-  opacity: 0;
-  span {
-    opacity: 0;
-  }
-}
-
 canvas {
   @extend %screen-full;
   pointer-events: none;
