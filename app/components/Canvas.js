@@ -17,7 +17,7 @@ export default class Canvas {
     this.createRenderer();
     this.createScene();
     this.createCamera();
-    this.reCalculate();
+    this.reCalculate({ scroll: {} });
     this.time = new time();
     this.canvas = this.renderer?.domElement;
     document.body.appendChild(this.canvas);

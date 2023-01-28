@@ -12,9 +12,9 @@ export default class Home extends LongPage {
   /** Life Cycle */
   create() {
     super.create();
-    this.reCalculate();
+    this.reCalculate({ scroll: {} });
   }
   reCalculate() {
-    super.reCalculate();
+    super.reCalculate({ scroll: {} });
   }
 }

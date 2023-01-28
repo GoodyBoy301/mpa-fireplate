@@ -5,7 +5,7 @@ import Canvas from "components/Canvas";
 
 export default class Framework {
   constructor() {
-    this.reCalculate();
+    this.reCalculate({ scroll: {} });
     this.createCanvas();
     // this.createPreloader();
     this.createContent();
@@ -16,7 +16,7 @@ export default class Framework {
 
   reCalculate() {
     this.isMobile = innerWidth < 768;
-    this.canvas?.reCalculate();
+    this.canvas?.reCalculate({ scroll: {} });
   }
 
   createPreloader() {
@@ -62,10 +62,10 @@ export default class Framework {
   }
 
   onResize() {
-    this.reCalculate && this.reCalculate();
-    this.page.reCalculate && this.page.reCalculate();
-    this.router.reCalculate && this.router.reCalculate();
-    this.navigation.reCalculate && this.navigation.reCalculate();
+    this.reCalculate && this.reCalculate({ scroll: {} });
+    this.page.reCalculate && this.page.reCalculate({ scroll: {} });
+    this.router.reCalculate && this.router.reCalculate({ scroll: {} });
+    this.navigation.reCalculate && this.navigation.reCalculate({ scroll: {} });
   }
 
   addEventListeners() {

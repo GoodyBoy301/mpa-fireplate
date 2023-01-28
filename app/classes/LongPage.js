@@ -12,7 +12,7 @@ export default class LongPage extends Page {
   /** Life Cycle */
   create() {
     super.create();
-    this.reCalculate();
+    this.reCalculate({ scroll: {} });
     this.transformPrefix = Prefix("transform");
     // this.Revealer = new Reveal({
     //   elements: {},
