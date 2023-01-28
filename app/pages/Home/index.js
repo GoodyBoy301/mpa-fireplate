@@ -1,9 +1,4 @@
-import Page from "classes/Page";
-import gsap from "gsap";
-import NormalizeWheel from "normalize-wheel";
-import Prefix from "prefix";
-import { clamp, lerp } from "utils/math";
-import Reveal from "classes/Reveal";
+import LongPage from "classes/Page";
 
 export default class Home extends LongPage {
   constructor() {
