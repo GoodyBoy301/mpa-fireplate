@@ -1,5 +1,5 @@
 .preloader {
-  @extend %screen-full;
+  @extend %full;
   z-index: $z-9;
   display: grid;
   place-content: center;

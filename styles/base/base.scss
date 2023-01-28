@@ -35,7 +35,7 @@ a {
 }
 
 canvas {
-  @extend %screen-full;
+  @extend %full;
   pointer-events: none;
   z-index: 4;
   transition: opacity 1s $ease-out-expo;
