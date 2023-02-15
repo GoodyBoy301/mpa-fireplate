@@ -1,4 +1,4 @@
-import LongPage from "classes/Page";
+import LongPage from "classes/LongPage";
 
 export default class Home extends LongPage {
   constructor() {

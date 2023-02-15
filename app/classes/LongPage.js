@@ -65,6 +65,7 @@ export default class LongPage extends Page {
   }
 
   smoothScroll() {
+    if (!this.elements.wrapper) return;
     const scrollTo = clamp(
       0,
       this.scroll.limit,

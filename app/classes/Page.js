@@ -25,6 +25,7 @@ export default class Page {
     this.createMesh?.call(this);
   }
   predestroy() {
+    if (!canvas) this.destroy();
     Canvas?.navigate = () => {
       this.removeEventListeners && this.removeEventListeners();
       gsap.to(this.element, { autoAlpha: 0 });
