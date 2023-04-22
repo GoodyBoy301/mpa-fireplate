@@ -17,20 +17,22 @@ export default class Page {
 
     //add animations
 
-    this.predestroy();
+    // this.predestroy();
   }
   createWebGL() {
     this.createGeometry?.call(this);
     this.createMaterial?.call(this);
     this.createMesh?.call(this);
   }
-  predestroy() {
-    if (!canvas) this.destroy();
-    Canvas?.navigate = () => {
-      this.removeEventListeners && this.removeEventListeners();
-      gsap.to(this.element, { autoAlpha: 0 });
-    };
-  }
+  
+  // predestroy() {
+  //   if (!canvas) this.destroy();
+  //   Canvas?.navigate = () => {
+  //     this.removeEventListeners && this.removeEventListeners();
+  //     gsap.to(this.element, { autoAlpha: 0 });
+  //   };
+  // }
+
   destroy() {}
 
   storePageAssets(collection, entries) {

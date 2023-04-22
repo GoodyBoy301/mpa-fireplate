@@ -19,7 +19,7 @@ export default class LongPage extends Page {
     // });
   }
   update() {
-    this.scroll && this.smoothScroll();
+    // this.scroll && this.smoothScroll();
   }
   destroy() {
     // this.Revealer.observer.disconnect();

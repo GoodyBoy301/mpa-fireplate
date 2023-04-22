@@ -1,5 +1,5 @@
 html {
-  overflow: hidden;
+  // overflow: hidden;
   font-size: calc(100vw / 1440 * 10);
 
   @include media("<phone") {
@@ -13,14 +13,18 @@ body {
   min-height: 100vh;
   user-select: none;
   -webkit-user-drag: none;
-  overflow: hidden;
+  // overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
   display: none !important;
 }
 
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
@@ -53,6 +57,6 @@ canvas {
   }
 }
 
-[data-reveal]{
+[data-reveal] {
   opacity: 0;
 }

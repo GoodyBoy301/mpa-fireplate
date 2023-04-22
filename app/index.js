@@ -7,7 +7,7 @@ class App extends Framework {
     requestAnimationFrame(this.update.bind(this));
     window.onunload = () => {
       scrollTo(0, 0);
-      Canvas?.destroy();
+      // Canvas?.destroy();
     };
   }
 
