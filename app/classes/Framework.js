@@ -36,7 +36,7 @@ export default class Framework {
       const scroll = event.scroll;
       scroll.current = this.page.scroll?.target;
       scroll.last = this.page.scroll?.last;
-      this.page.reCalculate({ scroll });
+      this.page?.reCalculate({ scroll });
     });
   }
   async onNavigate({ event, push = true }) {
@@ -69,9 +69,9 @@ export default class Framework {
 
   onResize() {
     this.reCalculate && this.reCalculate({ scroll: {} });
-    this.page.reCalculate && this.page.reCalculate({ scroll: {} });
-    this.router.reCalculate && this.router.reCalculate({ scroll: {} });
-    this.navigation.reCalculate && this.navigation.reCalculate({ scroll: {} });
+    this.page?.reCalculate && this.page.reCalculate({ scroll: {} });
+    this.router?.reCalculate && this.router.reCalculate({ scroll: {} });
+    this.navigation?.reCalculate && this.navigation.reCalculate({ scroll: {} });
   }
 
   addEventListeners() {

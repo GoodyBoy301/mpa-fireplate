@@ -51,6 +51,7 @@ canvas {
   pointer-events: none;
   z-index: 4;
   transition: opacity 1s $ease-out-expo;
+  display: none !important;
 
   @include media("<phone") {
     z-index: 3;
