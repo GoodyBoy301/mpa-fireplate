@@ -50,6 +50,11 @@ svg {
   display: block;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 canvas {
   @extend %full;
   pointer-events: none;
