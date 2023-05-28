@@ -46,6 +46,10 @@ div,
   -webkit-tap-highlight-color: transparent;
 }
 
+svg {
+  display: block;
+}
+
 canvas {
   @extend %full;
   pointer-events: none;
