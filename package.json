@@ -2,8 +2,8 @@
   "name": "untitled",
   "version": "0.0.0",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run frontend:build\" \"npm run backend:build\"",
-    "dev": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "start": "concurrently --kill-others \"pnpm run frontend:build\" \"pnpm run backend:build\"",
+    "dev": "concurrently --kill-others \"pnpm run backend:dev\" \"pnpm run frontend:dev\"",
     "frontend:dev": "webpack serve --progress --config webpack.config.dev.js",
     "frontend:build": "webpack --progress --config webpack.config.prod.js",
     "backend:dev": "nodemon index.js",
