@@ -30,8 +30,10 @@ export default class Framework {
     this.preloader.addEventListener("preloaded", this.onPreloaded.bind(this));
   }
   onPreloaded() {
-    this.createPages();
-    this.page.create();
+    document.fonts.ready.then(() => {
+      this.createPages();
+      this.page.create();
+    })
   }
 
   createNavigation() {
