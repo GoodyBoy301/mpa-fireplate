@@ -2,16 +2,22 @@ import Router from "classes/Router";
 import Preloader from "components/Preloader";
 // import Navigation from "components/Navigation";
 import Canvas from "components/Canvas";
+import * as quicklink from "quicklink"
 
 export default class Framework {
   constructor() {
+    quicklink.listen()
     this.reCalculate({ scroll: {} });
     this.createCanvas();
     // this.createPreloader();
     this.createContent();
     this.addEventListeners();
     // this.createNavigation();
-    if (!this.preloader) this.onPreloaded();
+    if (!this.preloader) {
+      document.fonts.ready.then(() => {
+        this.onPreloaded()
+      })
+    }
   }
 
   reCalculate() {
