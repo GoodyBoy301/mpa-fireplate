@@ -55,6 +55,10 @@ button {
   cursor: pointer;
 }
 
+input{
+  outline: none !important!
+}
+
 canvas {
   @extend %full;
   pointer-events: none;
