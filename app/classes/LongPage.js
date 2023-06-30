@@ -65,6 +65,7 @@ export default class LongPage extends Page {
   }
 
   smoothScroll() {
+    if (this.isMobile) return
     if (!this.elements.wrapper) return;
     const scrollTo = clamp(
       0,
@@ -76,11 +77,32 @@ export default class LongPage extends Page {
       this.transformPrefix
     ] = `translateY(-${this.scroll.current}px)`;
 
-    this.elements.parallexElements?.forEach((element) => {
+    try {
+      this.elements.parallaxElements?.forEach((element) => {
+        element.style[this.transformPrefix] = `translateY(-${
+          gsap.utils.clamp(
+            this.scrollstart,
+            this.scrollend,
+            this.scroll.current * element.getAttribute("data-parallax")
+          ) - this.start
+        }px)`
+        if (this.scroll.current < this.start) {
+          element.style[this.transformPrefix] = `translateY(0)`
+        }
+      })
+    } catch {
+      const element = this.elements.parallaxElements
       element.style[this.transformPrefix] = `translateY(-${
-        this.scroll.current * element.getAttribute("data-parallax")
-      }px)`;
-    });
+        gsap.utils.clamp(
+          this.scrollstart,
+          this.scrollend,
+          this.scroll.current * element.getAttribute("data-parallax")
+        ) - this.start
+      }px)`
+      if (this.scroll.current < this.start) {
+        element.style[this.transformPrefix] = `translateY(0)`
+      }
+    }
   }
 
   addEventListeners() {
