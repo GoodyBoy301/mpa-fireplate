@@ -15,7 +15,11 @@ export default class Reveal extends Component {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          this[entry.getAttribute("data-reveal")](entry.target);
+          try {
+            this[entry.target.getAttribute("data-reveal")](entry.target)
+          } catch {
+            console.log(entry.target)
+          }
           if (this.unobserve) this.observer.unobserve(entry.target);
           this.observer.unobserve(entry.target);
         } else {
