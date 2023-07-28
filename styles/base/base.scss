@@ -48,6 +48,8 @@ div,
 
 svg {
   display: block;
+  width: inherit;
+  height: inherit;
 }
 
 button {
@@ -73,4 +75,15 @@ canvas {
 
 [data-reveal] {
   opacity: 0;
+}
+
+[data-desktop] {
+  @include media("<phone") {
+    display: none !important;
+  }
+}
+[data-mobile] {
+  @include media(">phone") {
+    display: none !important;
+  }
 }
