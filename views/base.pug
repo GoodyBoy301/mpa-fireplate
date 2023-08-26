@@ -43,13 +43,15 @@ html(lang="en")
     style
       include ../public/main.css
 
-    include ./partials/preloader
+    //include ./partials/preloader
     include ./partials/header
 
-    .content#content(data-template=template)
-      block content
+    .app#smooth-wrapper
+      .__app#smooth-content
 
-      if template === "home"
+        .content#content(data-template=template)
+          block content
+
         include ./partials/footer
     script.
       window.preloadables = !{JSON.stringify(preloadables).replace(/<\//g, "<\\/")}
