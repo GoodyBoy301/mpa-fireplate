@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   })
 })
 
-app.get("/:invalid", (req, res) => {
+app.get("*", (req, res) => {
   res.redirect("/")
 })
 
