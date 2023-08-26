@@ -1,5 +1,6 @@
 import Home from "pages/Home";
 import Framework from "classes/Framework";
+import Four04 from "pages/404"
 
 class App extends Framework {
   constructor() {
@@ -14,9 +15,11 @@ class App extends Framework {
   createPages() {
     this.pages = {
       home: new Home(),
+      404: new Four04(),
     };
-    this.page = this.pages[this.template];
+    this.page = this.pages[this.template] || this.pages["404"]
     this.createRouter();
+    window.$app = this
   }
 
   update() {
