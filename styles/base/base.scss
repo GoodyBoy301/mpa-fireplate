@@ -34,6 +34,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 input,
@@ -57,7 +58,7 @@ button {
   cursor: pointer;
 }
 
-input{
+input {
   outline: none !important;
 }
 
@@ -82,6 +83,7 @@ canvas {
     display: none !important;
   }
 }
+
 [data-mobile] {
   @include media(">phone") {
     display: none !important;

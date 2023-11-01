@@ -24,8 +24,12 @@ export function map(valueToMap, inMin, inMax, outMin, outMax) {
   return gsap.utils.mapRange(inMin, inMax, outMin, outMax, valueToMap);
 }
 
-export function remToPixel(pixels, innerWidth = window.innerWidth) {
-  return (innerWidth / 1512) * 10 * pixels;
+export function remToPixel(
+  pixels,
+  designWidth = 1512,
+  innerWidth = window.innerWidth
+) {
+  return (innerWidth / designWidth) * 10 * pixels;
 }
 
 export function snap(

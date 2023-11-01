@@ -2,18 +2,12 @@ import gsap from "gsap";
 import Component from "classes/Component";
 import { MeshBasicMaterial, TextureLoader, sRGBEncoding } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { split } from "utils/text";
 
 export default class Preloader extends Component {
   constructor() {
     super({
       element: ".preloader",
-      elements: {
-        // text: "",
-        // progress: "",
-      },
     });
-    split({ element: this.elements.text });
     this.length = 0;
     this.limit = 100;
     this.assets = preloadables;
@@ -68,7 +62,6 @@ export default class Preloader extends Component {
           Object.values(this.assets.exports).length)) *
         this.limit
     );
-    this.elements.progress.innerText = `${Math.min(percentage, 301)} / 301`;
     if (percentage === this.limit) this.onCompleted();
   }
 

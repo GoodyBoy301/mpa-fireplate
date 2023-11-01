@@ -21,14 +21,10 @@ app.get("*", (req, res) => {
 })
 
 app.listen(port, () => {
-  //open chrome
-  childProc.exec(`open -a "Google Chrome" http://localhost:${port}`, () => {
-    //Stylishly log hostname and port
-    console.log(
-      `\x1b[32m Server listening at\x1b[0m`,
-      `\x1b[4mhttp://localhost:${port}\x1b[0m`
-    )
-  })
+  console.log(
+    `\x1b[32m Server listening at\x1b[0m`,
+    `\x1b[4mhttp://localhost:${port}\x1b[0m`
+  )
 })
 
 module.exports = app
