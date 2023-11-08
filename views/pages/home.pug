@@ -2,6 +2,8 @@ extends ../base.pug
 
 block variables
   - var template = "home"
+  - let slides = 0
+  - const createSlide = () => {slides++; return slides}
 
 block content 
   main.home
